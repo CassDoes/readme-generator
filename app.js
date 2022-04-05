@@ -46,10 +46,35 @@ const promptUser = () => {
             message: 'Please provide instructions and examples for how your project should be used.'
         },
         {
+            type: 'confirm',
+            name: 'confirmCredits',
+            message: 'Would you like to add any contributors to your project?',
+            default: false
+        },
+        {
             type: 'input',
             name: 'credits',
-            message: 'List your collaborators, if any, with links to their GitHub profiles.'
-        },
+            message: 'Enter name of contributor.',
+            when: ({ confirmCredits }) => {
+                if (confirmCredits) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }, 
+        {
+            type: 'input',
+            name: 'githubContributor',
+            message: 'Please enter the GitHub user name for contributor.',
+            when: ({ credits }) => {
+                if (credits) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },  
         {
             type: 'input',
             name: 'licenses',
@@ -57,8 +82,14 @@ const promptUser = () => {
         },
         {
             type: 'input',
-            name: 'questions',
-            message: 'What is your GitHub user name and email? How can you be reached for additional questions?'
+            name: 'github',
+            message: 'What is your GitHub user name?'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter the preferred email address you can be contacted at for additional questions.',
+
         },
         {
             type: 'input',
@@ -69,3 +100,5 @@ const promptUser = () => {
 };
 
 promptUser().then(answers => console.log(answers));
+
+//9.4.3

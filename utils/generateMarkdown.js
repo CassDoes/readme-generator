@@ -31,26 +31,28 @@ const generateMarkdown = (data) => {
   -[Questions](#questions)
   -[Tests](#tests)
 
-   ${data.description}
-  ##description:
+  ## Description:
+  ${data.description}
 
-   ${data.installation}
-  ##installation:
+  ## Installation:
+  ${data.installation}
 
-   ${data.usage}
-  ##usage:
+  ## Usage:
+  ${data.usage}
 
-   ${data.credits}
-  ##credits:
+  ## Credits:
+  ${data.credits}
+  ${data.githubContributor}
 
-   ${data.licenses}
-  ##licenses:
+  ## Licenses:
+  ${data.licenses}
 
-   ${data.questions}
-  ##questions:
+  ## Questions:
+  ${data.guthub}
+  ${data.email}
 
-   ${data.tests}
-  ##tests:
+  ## Tests:
+  ${data.tests}
 
   `;
 };
