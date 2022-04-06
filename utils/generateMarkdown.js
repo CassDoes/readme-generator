@@ -22,36 +22,40 @@ const generateMarkdown = (data) => {
 
   # ${data.title}
 
-  # Table of Content
-  -[Description](#description)
-  -[Installation](#installation)
-  -[Usage](#usage)
-  -[Credits](#credits)
-  -[Licenses](#licenses)
-  -[Questions](#questions)
-  -[Tests](#tests)
+  ## Table of Contents
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [Licenses](#licenses)
+  - [Questions](#questions)
+  - [Tests](#tests)
 
-  ## Description:
+  ## Description
   ${data.description}
 
-  ## Installation:
+  ## Installation
   ${data.installation}
 
-  ## Usage:
+  ## Usage
   ${data.usage}
 
-  ## Credits:
-  ${data.credits}
-  ${data.githubContributor}
+  ## Credits
+  [<img src="https://github.com/${data.githubContributor}.png?" width="100"/>](https://github.com/${data.githubContributor})  
 
-  ## Licenses:
+  **${data.credits}**
+  
+  ## Licenses
   ${data.licenses}
 
-  ## Questions:
-  ${data.guthub}
+  ## Questions
+  I can be contacted at the following:  
+
+  [<img src="https://github.com/${data.github}.png?" width="150"/>](https://github.com/${data.github})  
+  
   ${data.email}
 
-  ## Tests:
+  ## Tests
   ${data.tests}
 
   `;

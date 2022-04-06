@@ -1,35 +1,14 @@
-// // TODO: Include packages needed for this application
-
-// // TODO: Create an array of questions for user input
-//     const questions = [];
-
-// // TODO: Create a function to write README file
-//     function writeToFile(fileName, data) {}
-
-// // TODO: Create a function to initialize app
-//     function init() {}
-
-// // Function call to initialize app
-//      init();
-
-
 const inquirer = require('inquirer');
+const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// const fs = require('fs');
-// const generateMarkdown = require('./utils/generateMarkdown.js');
-
-// const pageData = generateMarkdown(data)
-
-// fs.writeFile('./README.md', pageData, err => {
-//     if (err) throw err;
-  
-//     console.log('READme complete!');
-//   });
-
-
-//add validate prompts in 9.3.6
 const promptUser = () => {
     return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'title',
+            message: 'What is the name of your project?'
+        },
         {
             type: 'input',
             name: 'description',
@@ -44,12 +23,33 @@ const promptUser = () => {
             type: 'input',
             name: 'usage',
             message: 'Please provide instructions and examples for how your project should be used.'
+        },  
+        {
+            type: 'input',
+            name: 'licenses',
+            message: 'How are other developers allowed to use your project?'
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'What is your GitHub user name?'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter the preferred email address you can be contacted at for additional questions.',
+
+        },
+        {
+            type: 'input',
+            name: 'tests',
+            message: 'What testing has your project been through?'
         },
         {
             type: 'confirm',
             name: 'confirmCredits',
             message: 'Would you like to add any contributors to your project?',
-            default: false
+            default: true
         },
         {
             type: 'input',
@@ -74,31 +74,46 @@ const promptUser = () => {
                     return false;
                 }
             }
-        },  
-        {
-            type: 'input',
-            name: 'licenses',
-            message: 'How are other developers allowed to use your project?'
         },
         {
-            type: 'input',
-            name: 'github',
-            message: 'What is your GitHub user name?'
-        },
-        {
-            type: 'input',
-            name: 'email',
-            message: 'Enter the preferred email address you can be contacted at for additional questions.',
-
-        },
-        {
-            type: 'input',
-            name: 'tests',
-            message: 'What testing has your project been through?'
+            type: 'confirm',
+            name: 'confirmAddContributors',
+            message: 'Would you like to enter another contributor?',
+            default: false
         },
     ]);
 };
 
-promptUser().then(answers => console.log(answers));
+promptUser().then(answers => {
 
-//9.4.3
+    fs.writeFile('./dist/README.md', generateMarkdown(answers), err => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log('README created!');
+    });
+
+});
+
+//promptUser().then(answers => console.log(answers));
+
+// const promptContributer = contributorData => {
+
+//     if (!contributorData.info) {
+//         contributorData.info = [];
+//     }
+
+//     return inquirer.prompt([
+        
+//     ])
+
+//     .then(creditData => {
+//         contributorData.info.push(creditData);
+//         if (creditData.confirmAddContributors) {
+//             return promptContributer(contributorData);
+//         } else {
+//             return contributorData;
+//         }
+//     });
+// };
