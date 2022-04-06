@@ -26,11 +26,6 @@ const promptUser = () => {
         },  
         {
             type: 'input',
-            name: 'licenses',
-            message: 'How are other developers allowed to use your project?'
-        },
-        {
-            type: 'input',
             name: 'github',
             message: 'What is your GitHub user name?'
         },
@@ -80,6 +75,17 @@ const promptUser = () => {
             name: 'confirmAddContributors',
             message: 'Would you like to enter another contributor?',
             default: false
+        },
+        {
+            type: 'checkbox',
+            name: 'license',
+            message: 'Which open source license would you like to include in your README?',
+            choices: ['MIT', 'GNU GPLv3']
+        },
+        {
+            type: 'input',
+            name: 'copyright',
+            message: 'Enter copyright holder name'
         },
     ]);
 };

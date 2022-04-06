@@ -1,6 +1,7 @@
 
 
-  # Portfolio
+  # asdf
+  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
   ## Table of Contents
   - [Description](#description)
@@ -12,28 +13,34 @@
   - [Tests](#tests)
 
   ## Description
-  Description words go here
+  asdf
 
   ## Installation
-  
+  asdf
 
   ## Usage
-  So many examples can go here
+  asdf
 
   ## Credits
-  [<img src="https://github.com/wist118.png?" width="100"/>](https://github.com/wist118)  
+  [<img src="https://github.com/undefined.png?" width="100"/>](https://github.com/undefined)  
 
-  **William Stock**
+  **undefined**
+
+  ## Contributing & Feedback 
+
+  Please reach out via either of these links with any questions, including ways in which  
+  you can contribute to this project!
+
+  [<img src="https://github.com/asdf.png?" width="150"/>](https://github.com/asdf)  
   
-  ## Licenses
-  Nobody can touch my shit
-
-  ## Questions
-  I can be contacted at the following:  
-  [<img src="https://github.com/cassdoes.png?" width="150"/>](https://github.com/cassdoes)  
-  cass@yahoo.com
+  asdf
 
   ## Tests
-  none at all
+  asdf
+
+  ## Licenses
+  
+  Copyright (c) asdfg. All rights reserved.  
+  Licensed under the MIT license.
 
   
