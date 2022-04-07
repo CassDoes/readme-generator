@@ -1,6 +1,6 @@
 
 
-  # asdf
+  # Command Line Generated README.md
   [<img src="https://img.shields.io/badge/License-MIT-yellow.svg"/>](https://choosealicense.com/licenses/mit/)
 
   ## Table of Contents
@@ -13,13 +13,13 @@
   - [Licenses](#licenses)
 
   ## Description
-  asdf
+  This project was designed to create README files for future projects without the need to generate and format new Markdown with each newly created repository.
 
   ## Installation
-  asdf
+  To use this project to generate your own README files, you'll need to clone this repository and install the required dependencies (npm inquirer). You can then access project from your command line.
 
   ## Usage
-  asdf
+  Every repository needs a complete and detailed README. This project makes generating a new README quick by using command line prompts to autofill an already formatted and styled Javascript file which then transfers all newly created input into a newly created README.md
 
   
   ## Credit  
@@ -34,13 +34,13 @@
 
   | [<img src="https://github.com/cassdoes.png?" width="150"/>](https://github.com/cassdoes) |
   | :-: |
-  | cass@yahoo.com |
+  | c.doexo@gmail.com |
   | **Cassandra Doe** |
 
   ## Tests
-  asdf
+  No standard testing. I ran the command line hundreds of times to test each new feature to ensure accuracy and that it was free of bugs.
 
   ## Licenses
-  Copyright (c) asdf. All rights reserved.  
+  Copyright (c) CassDoes. All rights reserved.  
   Licensed under the ['MIT'](https://choosealicense.com/licenses/mit/) license.
   
