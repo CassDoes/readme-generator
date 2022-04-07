@@ -1,4 +1,4 @@
-//create contributor section
+//create contributor section with Markdown table and styling
 const generateCredit = contributorArr => {
   const contributorCredit = contributorArr.filter(contributor => {
     if (contributor.confirmAddCredit) {
@@ -7,22 +7,31 @@ const generateCredit = contributorArr => {
       return false;
     }
   });
-  const creditArr = contributorCredit.map(({ creditName, creditGithub }) => {
-    return `
-    [<img src="https://github.com/${creditGithub}.png?" width="100"/>](https://github.com/${creditGithub})  
-  
-    **${creditName}**
-    `;
+
+  //renders contributor's Github profile image with embedded link to their profile
+  const creditGit = contributorCredit.map(({ creditGithub }) => {
+  return `[<img src="https://github.com/${creditGithub}.png?" width="100"/>](https://github.com/${creditGithub}) | `;
   });
-  console.log(creditName);
+
+  //adds required syntax to create Markdown table
+  const createGridSpacing = creditGit.map(({ }) => {
+  return `:----: | `;
+  });
+
+  //adds contributor name to bottom of Markdown table under their GitHub profile image
+  const creditText = contributorCredit.map(({ creditName }) => {
+  return `**${creditName}** | `;
+  });
 
   return `
-  ## Credit
-  ${creditArr.join('')}
+  ## Credit  
+  ${creditGit.join('')}
+  ${createGridSpacing.join('')}
+  ${creditText.join('')}
   `;
 };
 
-//renders license badge and link to license test
+//renders license badge (placed at top of README) with embedded link to license website
 const renderLicenseBadge = (license) => {
     let selectLicense = '';
 
@@ -36,8 +45,7 @@ const renderLicenseBadge = (license) => {
     return selectLicense;
 };
 
-
-//renders license text (with link) for license section
+//renders license text (also with embedded link) for license footer
 function renderLicenseLink(license) {
   let licenseText = '';
 
@@ -51,10 +59,9 @@ function renderLicenseLink(license) {
   return licenseText;
 };
 
-
 //generates a complete README file with input from command line
 module.exports = generateMarkdown => {;
-const { contributorArr, ...data } = generateMarkdown;
+const { contributors, ...data } = generateMarkdown;
 
   return `
 
@@ -65,10 +72,10 @@ const { contributorArr, ...data } = generateMarkdown;
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Credits](#credits)
-  - [Licenses](#licenses)
-  - [Questions](#questions)
+  - [Credit](#credit)
+  - [Contribute](#contribute)
   - [Tests](#tests)
+  - [Licenses](#licenses)
 
   ## Description
   ${data.description}
@@ -79,23 +86,21 @@ const { contributorArr, ...data } = generateMarkdown;
   ## Usage
   ${data.usage}
 
-  ${generateCredit(contributorArr)}
+  ${generateCredit(contributors)}
 
-  ## Contributing & Feedback 
-
-  Please reach out via either of these links with any questions, including ways in which
+  ## Contribute 
+  Please reach out via either of the following links with any questions, including ways in which
   you can contribute to this project!
 
-  [<img src="https://github.com/${data.github}.png?" width="150"/>](https://github.com/${data.github})  
-  
-  ${data.email}  
-  **${data.userName}**
+  | [<img src="https://github.com/${data.github}.png?" width="150"/>](https://github.com/${data.github}) |
+  | :-: |
+  | ${data.email} |
+  | **${data.userName}** |
 
   ## Tests
   ${data.tests}
 
   ## Licenses
-  
   Copyright (c) ${data.copyright}. All rights reserved.  
   Licensed under the ${renderLicenseLink(data.license)} license.
   `;

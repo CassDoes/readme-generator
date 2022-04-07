@@ -2,89 +2,15 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-
-//command line questions to generate README
+//questions about project and respository owner
 const promptUser = () => {
     return inquirer.prompt([
         {
             type: 'input',
             name: 'title',
-            message: 'What is the name of your project?'
-        },
-        {
-            type: 'input',
-            name: 'description',
-            message: 'Please provide a description explaining the what, why, and how of your project.'
-        },
-        {
-            type: 'input',
-            name: 'installation',
-            message: 'What are the steps required to install your project?'
-        },
-        {
-            type: 'input',
-            name: 'usage',
-            message: 'Please provide instructions and examples for how your project should be used.'
-        },  
-        {
-            type: 'input',
-            name: 'userName',
-            message: 'What is your first and last name?'
-        },
-        {
-            type: 'input',
-            name: 'github',
-            message: 'What is your GitHub user name?'
-        },
-        {
-            type: 'input',
-            name: 'email',
-            message: 'Enter the preferred email address you can be contacted at for additional questions.',
-
-        },
-        {
-            type: 'input',
-            name: 'tests',
-            message: 'What testing has your project been through?'
-        },
-        {
-            type: 'checkbox',
-            name: 'license',
-            message: 'Which license would you like to include in your README?',
-            choices: ['MIT', 'GNU GPLv3']
-        },
-        {
-            type: 'input',
-            name: 'copyright',
-            message: 'Enter copyright holder name'
-        },
-        {
-            type: 'confirm',
-            name: 'confirmCredits',
-            message: 'Would you like to add any contributors to your project?',
-            default: false,
-        },
-    ])
-}; 
-
-
-//questions about contributors
-const promptContributer = creditData => {
-    if (!creditData.contributors) {
-        creditData.contributors = [];
-    }
-    return inquirer.prompt([
-        {
-            type: 'input',
-            name: 'creditName',
-            message: 'Enter first and last name of contributor.'
-        }, 
-        {
-            type: 'input',
-            name: 'creditGithub',
-            message: 'Please enter the GitHub user name for contributor.',
-            when: ({ creditName }) => {
-                if (creditName) {
+            message: 'What is the name of your project? (Input Required)',
+            validate: projectName => {
+                if (projectName) {
                     return true;
                 } else {
                     return false;
@@ -92,11 +18,162 @@ const promptContributer = creditData => {
             }
         },
         {
+            type: 'input',
+            name: 'description',
+            message: 'Please provide a description explaining the what, why, and how of your project. (Input Required)',
+            validate: projectDescription => {
+                if (projectDescription) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'installation',
+            message: 'What are the steps required to install your project? (Input Required)',
+            validate: projectInstallation => {
+                if (projectInstallation) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'usage',
+            message: 'Please provide instructions and examples for how your project should be used. (Input Required)',
+            validate: projectUsage => {
+                if (projectUsage) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },  
+        {
+            type: 'input',
+            name: 'tests',
+            message: 'What testing has your project been through? (Input Required)',
+            validate: projectTests => {
+                if (projectTests) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'list',
+            name: 'license',
+            message: 'Which license would you like to include in your README?',
+            choices: ['MIT', 'GNU GPLv3'],
+            default: 0
+        },
+        {
+            type: 'input',
+            name: 'copyright',
+            message: "Enter the copyright holder's (individual or corporation) name for this project. (Input Required)",
+            validate: projectCopyright => {
+                if (projectCopyright) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'userName',
+            message: 'What is your first and last name? (Input Required)',
+            validate: projectUserName => {
+                if (projectUserName) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'What is your GitHub user name? (Input Required)',
+            validate: projectGithub => {
+                if (projectGithub) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter the preferred email address you can be contacted at for additional questions. (Input Required)',
+            validate: projectEmail => {
+                if (projectEmail) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+    ])
+}; 
+
+//creates an array if any contributors are added to the project
+const promptContributer = creditData => {
+    if (!creditData.contributors) {
+        creditData.contributors = [];
+    }
+    return inquirer.prompt([
+        {
             type: 'confirm',
             name: 'confirmAddCredit',
-            message: 'Would you like to enter another contributor?',
-            default: true
+            message: 'Would you like to enter additional contributors?',
+            default: false
         },
+        {
+            type: 'input',
+            name: 'creditName',
+            message: 'Enter first and last name of contributor. (Input Required)',
+            when: ({ confirmAddCredit }) => {
+                if (confirmAddCredit) {
+                    return true;
+                } else {
+                    return false;
+                }
+            },
+            validate: contributorCreditName => {
+                if (contributorCreditName) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }, 
+        {
+            type: 'input',
+            name: 'creditGithub',
+            message: 'Please enter the GitHub user name for contributor. (Input Required)',
+            when: ({ creditName }) => {
+                if (creditName) {
+                    return true;
+                } else {
+                    return false;
+                }
+            },
+            validate: contributorCreditGithub => {
+                if (contributorCreditGithub) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        
     ])
     
     .then(contributeInfo => {
@@ -109,11 +186,7 @@ const promptContributer = creditData => {
     });
 };
 
- 
-
 //callback function to generate README.md
-
-
 promptUser()
     .then(promptContributer)
     .then(creditData => {
@@ -127,19 +200,4 @@ promptUser()
       }
       console.log('Page created!');
     });
-})
-
-// promptUser().then(answers => {
-
-
-//     fs.writeFile('./dist/README.md', generateMarkdown(answers), err => {
-//         if (err) {
-//             console.log(err);
-//             return;
-//         }
-//         console.log('README created!');
-//     });
-
-// });
-
-//promptUser().then(answers => console.log(answers));
+});

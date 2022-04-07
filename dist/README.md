@@ -7,13 +7,13 @@
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Credits](#credits)
-  - [Licenses](#licenses)
-  - [Questions](#questions)
+  - [Credit](#credit)
+  - [Contribute](#contribute)
   - [Tests](#tests)
+  - [Licenses](#licenses)
 
   ## Description
-  fffffffffffffffffffffffffffffffffffffffffffffff
+  asdf
 
   ## Installation
   asdf
@@ -22,25 +22,25 @@
   asdf
 
   
-  ## Credit
+  ## Credit  
+  
+  
   
   
 
-  ## Contributing & Feedback 
-
-  Please reach out via either of these links with any questions, including ways in which
+  ## Contribute 
+  Please reach out via either of the following links with any questions, including ways in which
   you can contribute to this project!
 
-  [<img src="https://github.com/asdf.png?" width="150"/>](https://github.com/asdf)  
-  
-  asdf  
-  **asdf**
+  | [<img src="https://github.com/cassdoes.png?" width="150"/>](https://github.com/cassdoes) |
+  | :-: |
+  | cass@yahoo.com |
+  | **Cassandra Doe** |
 
   ## Tests
   asdf
 
   ## Licenses
-  
   Copyright (c) asdf. All rights reserved.  
   Licensed under the ['MIT'](https://choosealicense.com/licenses/mit/) license.
   
