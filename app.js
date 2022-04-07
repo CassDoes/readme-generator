@@ -2,6 +2,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
+
+//command line questions to generate README
 const promptUser = () => {
     return inquirer.prompt([
         {
@@ -12,7 +14,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'description',
-            message: 'Please provide a short description explaining the what, why, and how of your project.'
+            message: 'Please provide a description explaining the what, why, and how of your project.'
         },
         {
             type: 'input',
@@ -24,6 +26,11 @@ const promptUser = () => {
             name: 'usage',
             message: 'Please provide instructions and examples for how your project should be used.'
         },  
+        {
+            type: 'input',
+            name: 'userName',
+            message: 'What is your first and last name?'
+        },
         {
             type: 'input',
             name: 'github',
@@ -41,45 +48,9 @@ const promptUser = () => {
             message: 'What testing has your project been through?'
         },
         {
-            type: 'confirm',
-            name: 'confirmCredits',
-            message: 'Would you like to add any contributors to your project?',
-            default: true
-        },
-        {
-            type: 'input',
-            name: 'credits',
-            message: 'Enter name of contributor.',
-            when: ({ confirmCredits }) => {
-                if (confirmCredits) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        }, 
-        {
-            type: 'input',
-            name: 'githubContributor',
-            message: 'Please enter the GitHub user name for contributor.',
-            when: ({ credits }) => {
-                if (credits) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'confirm',
-            name: 'confirmAddContributors',
-            message: 'Would you like to enter another contributor?',
-            default: false
-        },
-        {
             type: 'checkbox',
             name: 'license',
-            message: 'Which open source license would you like to include in your README?',
+            message: 'Which license would you like to include in your README?',
             choices: ['MIT', 'GNU GPLv3']
         },
         {
@@ -87,39 +58,88 @@ const promptUser = () => {
             name: 'copyright',
             message: 'Enter copyright holder name'
         },
-    ]);
+        {
+            type: 'confirm',
+            name: 'confirmCredits',
+            message: 'Would you like to add any contributors to your project?',
+            default: false,
+        },
+    ])
+}; 
+
+
+//questions about contributors
+const promptContributer = creditData => {
+    if (!creditData.contributors) {
+        creditData.contributors = [];
+    }
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'creditName',
+            message: 'Enter first and last name of contributor.'
+        }, 
+        {
+            type: 'input',
+            name: 'creditGithub',
+            message: 'Please enter the GitHub user name for contributor.',
+            when: ({ creditName }) => {
+                if (creditName) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmAddCredit',
+            message: 'Would you like to enter another contributor?',
+            default: true
+        },
+    ])
+    
+    .then(contributeInfo => {
+        creditData.contributors.push(contributeInfo);
+        if (contributeInfo.confirmAddCredit) {
+            return promptContributer(creditData);
+        } else {
+            return creditData;
+        }
+    });
 };
 
-promptUser().then(answers => {
+ 
 
-    fs.writeFile('./dist/README.md', generateMarkdown(answers), err => {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        console.log('README created!');
+//callback function to generate README.md
+
+
+promptUser()
+    .then(promptContributer)
+    .then(creditData => {
+
+        const pageMd = generateMarkdown(creditData);
+
+    fs.writeFile('./dist/README.md', pageMd, err => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      console.log('Page created!');
     });
+})
 
-});
+// promptUser().then(answers => {
+
+
+//     fs.writeFile('./dist/README.md', generateMarkdown(answers), err => {
+//         if (err) {
+//             console.log(err);
+//             return;
+//         }
+//         console.log('README created!');
+//     });
+
+// });
 
 //promptUser().then(answers => console.log(answers));
-
-// const promptContributer = contributorData => {
-
-//     if (!contributorData.info) {
-//         contributorData.info = [];
-//     }
-
-//     return inquirer.prompt([
-        
-//     ])
-
-//     .then(creditData => {
-//         contributorData.info.push(creditData);
-//         if (creditData.confirmAddContributors) {
-//             return promptContributer(contributorData);
-//         } else {
-//             return contributorData;
-//         }
-//     });
-// };
