@@ -1,7 +1,7 @@
 
 
   # Command Line Generated README.md
-  [<img src="https://img.shields.io/badge/License-MIT-yellow.svg"/>](https://choosealicense.com/licenses/mit/)
+  [<img src="https://img.shields.io/badge/License-MIT-yellow.svg"/>](https://www.mit.edu/~amini/LICENSE.md)
 
   ## Table of Contents
   - [Description](#description)
@@ -38,6 +38,6 @@
 
   ## Licenses
   Copyright (c) CassDoes. All rights reserved.  
-  Licensed under the ['MIT'](https://choosealicense.com/licenses/mit/) license.
+  Licensed under the ['MIT'](https://www.mit.edu/~amini/LICENSE.md) license.
 
   
