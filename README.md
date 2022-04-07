@@ -21,10 +21,9 @@
   ## Usage
   Every repository needs a complete and detailed README. This project makes generating a new README quick by using command line prompts to autofill an already formatted and styled Javascript file which then transfers all newly created input into a newly created README.md
 
-  
   ## Credit  
- [<img src="https://github.com/Xandromus.png?" width="100"/>](https://github.com/Xandromus)  [<img src="https://github.com/gchoi2u.png?" width="100"/>](https://github.com/gchoi2u)
-
+  [<img src="https://github.com/Xandromus.png?" width="100"/>](https://github.com/Xandromus)  [<img src="https://github.com/gchoi2u.png?" width="100"/>](https://github.com/gchoi2u)
+  
   ## Contribute 
   Please reach out via either of the following links with any questions, including ways in which
   you can contribute to this project!
