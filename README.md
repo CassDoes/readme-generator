@@ -23,10 +23,7 @@
 
   
   ## Credit  
-  
-  
-  
-  
+ [<img src="https://github.com/Xandromus.png?" width="100"/>](https://github.com/Xandromus)  [<img src="https://github.com/gchoi2u.png?" width="100"/>](https://github.com/gchoi2u)
 
   ## Contribute 
   Please reach out via either of the following links with any questions, including ways in which
