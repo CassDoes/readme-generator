@@ -13,13 +13,13 @@
   - [Licenses](#licenses)
 
   ## Description
-  This project was designed to create README files for future projects without the need to generate and format new Markdown with each newly created repository.
+  This application was designed to create README files for future projects without the need to generate and format new Markdown with each new project repository.
 
   ## Installation
-  To use this project to generate your own README files, you'll need to clone this repository and install the required dependencies (npm inquirer). You can then access project from your command line.
+  Use this application to generate README files unique to your project. You'll need to clone this repository and install the required dependencies. You can then access project from your command line.
 
   ## Usage
-  Every repository needs a complete and detailed README. This project makes generating a new README quick by using command line prompts to autofill an already formatted and styled Javascript file which then transfers all newly created input into a newly created README.md
+  Every repository needs a high-quality README. This project can quickly generate a unique README by using command line prompts to autofill an already formatted and styled Javascript file which then uses the dynamically created content to autofill and create a custom README file.
 
   ## Credit  
   [<img src="https://github.com/Xandromus.png?" width="100"/>](https://github.com/Xandromus)  [<img src="https://github.com/gchoi2u.png?" width="100"/>](https://github.com/gchoi2u)
