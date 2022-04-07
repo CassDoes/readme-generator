@@ -36,9 +36,11 @@ const renderLicenseBadge = (license) => {
     let selectLicense = '';
 
     if (license == 'MIT') {
-      selectLicense = `[<img src="https://img.shields.io/badge/License-MIT-yellow.svg"/>](https://choosealicense.com/licenses/mit/)`
-    } else if (license == 'GNU GPLv3') {
-      selectLicense = `[<img src="https://img.shields.io/badge/License-FDL_v1.3-blue.svg"/>](https://www.gnu.org/licenses/gpl-3.0)`
+      selectLicense = `[<img src="https://img.shields.io/badge/License-MIT-yellow.svg"/>](https://www.mit.edu/~amini/LICENSE.md)`
+    } else if (license == 'Apache') {
+      selectLicense = `[<img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg"/>](https://www.apache.org/licenses/LICENSE-2.0.txt)`
+    } else if (license == 'GNU') {
+      selectLicense = `[<img src="https://img.shields.io/badge/License-FDL_v1.3-blue.svg"/>](https://www.gnu.org/licenses/gpl-3.0.txt)`
     } else {
       selectLicense = ''
     }
@@ -50,9 +52,11 @@ function renderLicenseLink(license) {
   let licenseText = '';
 
   if (license == 'MIT') {
-    licenseText = `['MIT'](https://choosealicense.com/licenses/mit/)`
-  } else if (license == 'GNU GPLv3') {
-    licenseText = `['GNU GPLv3'](https://www.gnu.org/licenses/gpl-3.0)`
+    licenseText = `['MIT'](https://www.mit.edu/~amini/LICENSE.md)`
+  } else if (license == 'Apache') {
+    licenseText = `['Apache'](https://www.apache.org/licenses/LICENSE-2.0.txt)` 
+  } else if (license == 'GNU') {
+    licenseText = `['GNU'](https://www.gnu.org/licenses/gpl-3.0.txt)`
   } else {
     licenseText = ''
   }

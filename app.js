@@ -68,8 +68,8 @@ const promptUser = () => {
         {
             type: 'list',
             name: 'license',
-            message: 'Which license would you like to include in your README?',
-            choices: ['MIT', 'GNU GPLv3'],
+            message: 'Which open source license would you like to include in your README?',
+            choices: ['MIT', 'Apache', 'GNU'],
             default: 0
         },
         {

@@ -1,7 +1,7 @@
 
 
   # asdf
-  [<img src="https://img.shields.io/badge/License-MIT-yellow.svg"/>](https://choosealicense.com/licenses/mit/)
+  [<img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg"/>](https://www.apache.org/licenses/LICENSE-2.0.txt)
 
   ## Table of Contents
   - [Description](#description)
@@ -32,15 +32,15 @@
   Please reach out via either of the following links with any questions, including ways in which
   you can contribute to this project!
 
-  | [<img src="https://github.com/cassdoes.png?" width="150"/>](https://github.com/cassdoes) |
+  | [<img src="https://github.com/asdf.png?" width="150"/>](https://github.com/asdf) |
   | :-: |
-  | cass@yahoo.com |
-  | **Cassandra Doe** |
+  | asdf |
+  | **asdf** |
 
   ## Tests
   asdf
 
   ## Licenses
   Copyright (c) asdf. All rights reserved.  
-  Licensed under the ['MIT'](https://choosealicense.com/licenses/mit/) license.
+  Licensed under the ['GNU'](https://www.apache.org/licenses/LICENSE-2.0.txt) license.
   
