@@ -1,7 +1,7 @@
 
 
-  # asdf
-  [<img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg"/>](https://www.apache.org/licenses/LICENSE-2.0.txt)
+  # Command Line Generated README.md
+  [<img src="https://img.shields.io/badge/License-MIT-yellow.svg"/>](https://choosealicense.com/licenses/mit/)
 
   ## Table of Contents
   - [Description](#description)
@@ -13,13 +13,13 @@
   - [Licenses](#licenses)
 
   ## Description
-  asdf
+  This project was designed to create README files for future projects without the need to generate and format new Markdown with each newly created repository.
 
   ## Installation
-  asdf
+  To use this project to generate your own README files, you'll need to clone this repository and install the required dependencies (npm inquirer). You can then access project from your command line.
 
   ## Usage
-  asdf
+  Every repository needs a complete and detailed README. This project makes generating a new README quick by using command line prompts to autofill an already formatted and styled Javascript file which then transfers all newly created input into a newly created README.md
 
   
   ## Credit  
@@ -32,15 +32,15 @@
   Please reach out via either of the following links with any questions, including ways in which
   you can contribute to this project!
 
-  | [<img src="https://github.com/asdf.png?" width="150"/>](https://github.com/asdf) |
+  | [<img src="https://github.com/cassdoes.png?" width="150"/>](https://github.com/cassdoes) |
   | :-: |
-  | asdf |
-  | **asdf** |
+  | c.doexo@gmail.com |
+  | **Cassandra Doe** |
 
   ## Tests
-  asdf
+  No standard testing. I ran the command line hundreds of times to test each new feature to ensure accuracy and that it was free of bugs.
 
   ## Licenses
-  Copyright (c) asdf. All rights reserved.  
-  Licensed under the ['GNU'](https://www.apache.org/licenses/LICENSE-2.0.txt) license.
+  Copyright (c) CassDoes. All rights reserved.  
+  Licensed under the ['MIT'](https://choosealicense.com/licenses/mit/) license.
   
