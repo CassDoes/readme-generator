@@ -9,6 +9,7 @@
   - [Usage](#usage)
   - [Credit](#credit)
   - [Contribute](#contribute)
+  - [Tutorial](#tutorial)
   - [Tests](#tests)
   - [Licenses](#licenses)
 
@@ -34,8 +35,10 @@
   | **Cassandra Doe** |
 
   ## Tutorial
+  [Click Here](https://www.youtube.com/watch?v=FP_-FNbvuDI) to watch the full tutorial on YouTube  
+  
   ![image](https://user-images.githubusercontent.com/96797348/162356680-0e532113-bc34-415f-b2cf-6a5c36f178f2.png)
-![image](https://user-images.githubusercontent.com/96797348/162356732-6fd6a240-5044-45cd-817a-dff54d592454.png)
+![image](https://user-images.githubusercontent.com/96797348/162356732-6fd6a240-5044-45cd-817a-dff54d592454.png)  
 
   ## Tests
   No standard testing. I ran the command line hundreds of times to test each new feature to ensure accuracy and that it was free of bugs.
